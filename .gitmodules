@@ -1,3 +1,3 @@
 [submodule "python/class-test"]
 	path = python/class-test
-	url = git@gitlab.com:takahiro-itou/python-class-test.git
+	url = ../python-class-test.git
