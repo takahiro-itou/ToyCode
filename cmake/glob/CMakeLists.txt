@@ -26,7 +26,10 @@ project(${project_name}     VERSION  1.0.0)
 file(GLOB  file_glob_1  "*-export.cmake")
 message("file_glob_1 = ${file_glob_1}")
 
-file(GLOB  file_glob_2  "subdir/*/*-export.cmake")
+set(glob_target_dir     "subdir/*")
+message("glob_target_dir = ${glob_target_dir}")
+
+file(GLOB  file_glob_2  "${glob_target_dir}/*-export.cmake")
 message("file_glob_2 = ${file_glob_2}")
 
 ForEach (target_file  ${file_glob_2})
