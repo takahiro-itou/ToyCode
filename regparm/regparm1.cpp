@@ -1,6 +1,7 @@
 
 #if 0
 program=regparm1;
+g++ -Wall -O0 -g -S  ${program}.cpp;
 g++ -Wall -O0 -g -o bin_${program} ${program}.cpp;
 exit 0;
 #endif
@@ -48,16 +49,19 @@ int Hoge::test1_0(int a)
     return ( x_ + a );
 }
 
+TEST_REGPARM_1
 int Hoge::test1_1(int a)
 {
     return ( x_ + a );
 }
 
+TEST_REGPARM_2
 int Hoge::test1_2(int a)
 {
     return ( x_ + a );
 }
 
+TEST_REGPARM_3
 int Hoge::test1_3(int a)
 {
     return ( x_ + a );
@@ -68,16 +72,19 @@ int Hoge::test2_0(int a, int b)
     return ( x_ + a + b );
 }
 
+TEST_REGPARM_1
 int Hoge::test2_1(int a, int b)
 {
     return ( x_ + a + b );
 }
 
+TEST_REGPARM_2
 int Hoge::test2_2(int a, int b)
 {
     return ( x_ + a + b );
 }
 
+TEST_REGPARM_3
 int Hoge::test2_3(int a, int b)
 {
     return ( x_ + a + b );
