@@ -16,6 +16,7 @@ print(f"{dirname=}")
 os.putenv('TMPDIR', '/ramdisk/foo/bar')
 os.environ['TMPDIR'] = '/ramdisk/foo/bar'
 tmpdir = os.environ.get('TMPDIR')
+tempfile.tempdir = tmpdir
 print(f"{tmpdir=}")
 
 if tmpdir:
