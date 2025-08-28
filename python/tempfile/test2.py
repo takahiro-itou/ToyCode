@@ -1,6 +1,7 @@
 #!/usr/bin/env  python3
 
 import os
+import tempfile
 
 
 # 環境変数
@@ -14,8 +15,6 @@ print(f"{tmpdir=}")
 
 if tmpdir:
     os.makedirs(tmpdir, exist_ok=True)
-
-import tempfile
 
 dirname = tempfile.mkdtemp(prefix='hoge-')
 print(f"{dirname=}")
