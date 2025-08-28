@@ -3,6 +3,8 @@
 import os
 import tempfile
 
+print(f"{tempfile.tempdir=}")
+
 # 環境変数
 tmpdir = os.environ.get('TMPDIR')
 print(f"{tmpdir=}")
