@@ -8,11 +8,13 @@ script_dir=$(readlink -f "$(dirname "${current_srcfile}")")
 test=123
 
 function  main () {
+    echo  "\$0 = $0"
     echo  "current_srcfile = ${current_srcfile}"
     echo  "script_dir = ${script_dir}"
 
     source  "${script_dir}/subdir/function.sh"
 
+    echo  "\$0 = $0"
     echo  "current_srcfile = ${current_srcfile}"
     echo  "script_dir = ${script_dir}"
 
