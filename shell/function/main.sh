@@ -15,7 +15,10 @@ function  main () {
 
     echo  "current_srcfile = ${current_srcfile}"
     echo  "script_dir = ${script_dir}"
+
+    echo  "test = ${test}"
+    echo  "helper_local_val = ${helper_local_val:-'null'}"
+    echo  "func_test_val = ${func_test_val}"
 }
 
 main  "$@"
-
