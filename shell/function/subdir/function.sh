@@ -5,6 +5,9 @@ function  testfunc () {
 local   current_srcfile=${BASH_SOURCE:-$0}
 local   script_dir=$(readlink -f "$(dirname "${current_srcfile}")")
 
+echo  "current_srcfile = ${current_srcfile}"
+echo  "script_dir = ${script_dir}"
+
 local   test
 
 test=999
