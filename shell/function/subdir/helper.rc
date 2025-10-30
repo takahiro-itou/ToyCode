@@ -19,4 +19,4 @@ func_test_val=456
 
 }
 
-main
+subdir::helper::main
