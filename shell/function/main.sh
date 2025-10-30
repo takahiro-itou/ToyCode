@@ -25,5 +25,12 @@ function  main () {
     echo  "func_test_val = ${func_test_val}"
 }
 
+echo  -e '--------------------------------'
+echo  -e 'call main in main.sh'
 main  "$@"
+
+echo  -e '\n'
+echo  -e '--------------------------------'
+echo  -e 'call main in main.sh'
+
 main  "$@"
