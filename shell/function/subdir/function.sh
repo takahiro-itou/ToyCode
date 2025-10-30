@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function  testfunc () {
+function  function_sh::testfunc () {
 
 local   current_srcfile=${BASH_SOURCE:-$0}
 local   script_dir=$(readlink -f "$(dirname "${current_srcfile}")")
@@ -17,4 +17,4 @@ source  "${script_dir}/helper.rc"
 
 }
 
-testfunc
+function_sh::testfunc
