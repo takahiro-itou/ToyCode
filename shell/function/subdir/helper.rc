@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function  main () {
+function  subdir::helper::main () {
 
 echo  "helper::main"  1>&2
 
