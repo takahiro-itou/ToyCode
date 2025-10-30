@@ -2,6 +2,8 @@
 
 function  main () {
 
+echo  "helper::main"  1>&2
+
 local   current_srcfile=${BASH_SOURCE:-$0}
 local   script_dir=$(readlink -f "$(dirname "${current_srcfile}")")
 

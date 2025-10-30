@@ -8,6 +8,8 @@ script_dir=$(readlink -f "$(dirname "${current_srcfile}")")
 test=123
 
 function  main () {
+    echo  "main::main"  1>&2
+
     echo  "\$0 = $0"
     echo  "current_srcfile = ${current_srcfile}"
     echo  "script_dir = ${script_dir}"
@@ -23,4 +25,5 @@ function  main () {
     echo  "func_test_val = ${func_test_val}"
 }
 
+main  "$@"
 main  "$@"
