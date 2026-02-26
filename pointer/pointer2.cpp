@@ -72,6 +72,9 @@ int main(int argc, char * argv[])
     std::cout   <<  "pb = "  <<  pb.use_count()  <<  ":";
     pb->func();
 
+    std::shared_ptr<Base>   pb2 = std::make_shared<Derived>(3, 4);
+    pb2->func();
+
     return ( 0 );
 }
 
