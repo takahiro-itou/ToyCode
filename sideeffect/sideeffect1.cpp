@@ -11,4 +11,11 @@ int main(int argc, char * argv[])
 {
     int i = 10;
     printf("%d %d %d\n", i, i++, i);
+
+    i = 10;
+    printf("%d %d %d %d\n", i, i++, ++i, i);
+
+    i = 10;
+    i = i++ + i;
+    printf("%d\n", i);
 }
