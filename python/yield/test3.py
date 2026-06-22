@@ -24,23 +24,29 @@ class  YieldTester:
 class  MyIterator:
 
     def __init__(self, it):
-        self._it = iter(it)
         self._tester = YieldTester()
-        self._work = self.get_next()
+        self._it = iter(it)
+        self._work = self.get_next_iterator()
 
     def __iter__(self):
         return  self
 
     def __next__(self):
-        try:
-            return  next(self._work)
-        except  StopIteration:
-            pass
+        while True:
+            try:
+                return  next(self._work)
+            except  StopIteration:
+                print(f"Exausted")
+                pass
 
-        self._work = self.get_next()
+            try:
+                self._work = self.get_next_iterator()
+            except  StopIteration:
+                print("All Finish")
+                raise  StopIteration
+        # End While
 
-
-    def get_next(self):
+    def get_next_iterator(self):
         val = next(self._it)
         print(f"MyIterator::__next__ {val=}")
         yield from  self._tester.test(val)
