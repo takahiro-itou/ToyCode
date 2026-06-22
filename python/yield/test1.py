@@ -21,11 +21,25 @@ class  YieldTester:
 # End Class (YieldTester)
 
 
+class  MyIterator:
+
+    def __init__(self, it):
+        self._it = it
+        self._tester = YieldTester()
+
+    def __iter__(self):
+        return  self
+
+    def __next__(self):
+        yield from  self._tester(next(self._it))
+
+# End Class (MyIterator)
+
+
 counter = 0
-tester = YieldTester()
-for i in range(10):
-    r = tester.test(i)
+myit = MyIterator(range(10))
+
+for x in myit:
     counter += 1
-    print(f"MAIN : {counter=}, {r=}")
-    print(f"{list(r)=}")
+    print(f"MAIN : {counter=}, {x=}")
 # Next (i)
