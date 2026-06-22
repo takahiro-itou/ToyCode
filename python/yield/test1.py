@@ -20,10 +20,12 @@ class  YieldTester:
 
 # End Class (YieldTester)
 
+
 counter = 0
 tester = YieldTester()
 for i in range(10):
     r = tester.test(i)
     counter += 1
     print(f"MAIN : {counter=}, {r=}")
+    print(f"{list(r)=}")
 # Next (i)
