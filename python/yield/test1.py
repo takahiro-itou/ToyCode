@@ -21,39 +21,11 @@ class  YieldTester:
 # End Class (YieldTester)
 
 
-class  MyIterator:
-
-    def __init__(self, it):
-        self._it = iter(it)
-        self._tester = YieldTester()
-        self._work = self.get_next()
-
-    def __iter__(self):
-        return  self
-
-    def __next__(self):
-        try:
-            return  next(self._work)
-        except  StopIteration:
-            pass
-
-        self._work = self.get_next()
-
-
-    def get_next(self):
-        val = next(self._it)
-        print(f"MyIterator::__next__ {val=}")
-        yield from  self._tester.test(val)
-
-# End Class (MyIterator)
-
-
 counter = 0
-myit = MyIterator(range(10))
-
-for x in myit:
+tester = YieldTester()
+for i in range(10):
+    r = tester.test(i)
     counter += 1
-    print(f"MAIN : {counter=}, {x=}")
-    if (counter >= 10):
-        break
+    print(f"MAIN : {counter=}, {r=}")
+    print(f"{list(r)=}")
 # Next (i)
