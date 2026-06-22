@@ -1,6 +1,6 @@
 #!python3
 
-class  YieldTester
+class  YieldTester:
 
     def __init__(self):
         self._packs = []
@@ -18,12 +18,12 @@ class  YieldTester
         # End If
     # End Def (test)
 
-# End Class (YieldTest)
+# End Class (YieldTester)
 
 counter = 0
-tester = YieldTest()
+tester = YieldTester()
 for i in range(10):
     r = tester.test(i)
     counter += 1
-    print("MAIN : {counter=}, {r=}")
+    print(f"MAIN : {counter=}, {r=}")
 # Next (i)
