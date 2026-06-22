@@ -26,12 +26,18 @@ class  MyIterator:
     def __init__(self, it):
         self._it = it
         self._tester = YieldTester()
+        self._work = None
 
     def __iter__(self):
         return  self
 
     def __next__(self):
-        yield from  self._tester(next(self._it))
+        return  self.get_next()
+
+    def get_next(self):
+        val = next(self._it)
+        print("MyIterator::__next__ {val=}")
+        yield from  self._tester(val)
 
 # End Class (MyIterator)
 
@@ -42,4 +48,6 @@ myit = MyIterator(range(10))
 for x in myit:
     counter += 1
     print(f"MAIN : {counter=}, {x=}")
+    if (counter >= 10):
+        break
 # Next (i)
